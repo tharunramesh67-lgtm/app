@@ -22,19 +22,25 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', message: 'Backend is running' });
 });
 
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Welcome to the MERN API',
-        environment: process.env.NODE_ENV || 'development',
-        healthCheck: '/api/health'
-    });
-});
-
-// Production Setup
+// Production and Development Route Setup
 if (process.env.NODE_ENV === 'production') {
+    // Serve static files from React build (dist folder)
     app.use(express.static(path.join(__dirname, '../client/dist')));
-    app.get(/.*/, (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+
+    // Catch-all route to serve the React frontend for all non-API paths
+    app.get('*', (req, res) => {
+        if (!req.path.startsWith('/api')) {
+            res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+        }
+    });
+} else {
+    // Development root route with helpful API message
+    app.get('/', (req, res) => {
+        res.json({
+            message: 'Welcome to the MERN API',
+            environment: 'development',
+            healthCheck: '/api/health'
+        });
     });
 }
 
