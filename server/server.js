@@ -22,6 +22,14 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', message: 'Backend is running' });
 });
 
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Welcome to the MERN API',
+        environment: process.env.NODE_ENV || 'development',
+        healthCheck: '/api/health'
+    });
+});
+
 // Production Setup
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
