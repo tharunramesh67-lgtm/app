@@ -26,7 +26,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Catch-all route to serve the React frontend
-app.get('*', (req, res) => {
+app.get('(.*)', (req, res) => {
     // If the request starts with /api but isn't matched above, return 404
     if (req.path.startsWith('/api')) {
         return res.status(404).json({ error: 'API route not found' });
