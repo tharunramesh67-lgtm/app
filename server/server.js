@@ -17,32 +17,34 @@ mongoose.connect(MONGODB_URI)
     .then(() => console.log('MongoDB connected successfully'))
     .catch(err => console.error('MongoDB connection error:', err));
 
+// Static File Serving (React Frontend)
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 // API Routes
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', message: 'Backend is running' });
 });
 
-// Production and Development Route Setup
-if (process.env.NODE_ENV === 'production') {
-    // Serve static files from React build (dist folder)
-    app.use(express.static(path.join(__dirname, '../client/dist')));
+// Catch-all route to serve the React frontend
+app.get('*', (req, res) => {
+    // If the request starts with /api but isn't matched above, return 404
+    if (req.path.startsWith('/api')) {
+        return res.status(404).json({ error: 'API route not found' });
+    }
 
-    // Catch-all route to serve the React frontend for all non-API paths
-    app.get('*', (req, res) => {
-        if (!req.path.startsWith('/api')) {
-            res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+    // Serve index.html for all other routes (React Router support)
+    const indexPath = path.join(__dirname, '../client/dist', 'index.html');
+    res.sendFile(indexPath, (err) => {
+        if (err) {
+            // Fallback if the build folder doesn't exist yet
+            res.json({
+                message: 'Welcome to the MERN API',
+                environment: process.env.NODE_ENV || 'development',
+                frontendStatus: 'Build files not found. Run npm run build in client folder.'
+            });
         }
     });
-} else {
-    // Development root route with helpful API message
-    app.get('/', (req, res) => {
-        res.json({
-            message: 'Welcome to the MERN API',
-            environment: 'development',
-            healthCheck: '/api/health'
-        });
-    });
-}
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
