@@ -218,7 +218,7 @@ const App = () => {
                         <span className="title-line accent">Beautiful Story</span>
                     </h1>
                     <div className="hero-divider" ref={heroDividerRef} style={{ opacity: 0 }}></div>
-                    <p className="hero-date" ref={heroDateRef}>March 6, 2026</p>
+                    <p className="hero-date" ref={heroDateRef}>March 11, 2026</p>
                     <div className="hero-scroll-indicator" ref={scrollIndicatorRef}>
                         <span className="scroll-text">Looking back at us</span>
                         <div className="scroll-arrow">↓</div>
@@ -229,18 +229,18 @@ const App = () => {
             <section id="wish" className="wish-section">
                 <div className="wish-container">
                     <div className="wish-card" style={{ opacity: 0 }}>
-                        <h2 className="wish-heading">To My Everything,</h2>
+                        <h2 className="wish-heading">To My Everything chikkkuh</h2>
                         <div className="wish-divider">
                             <span className="divider-line"></span>
                             <Heart size={20} fill="currentColor" />
                             <span className="divider-line"></span>
                         </div>
                         <p className="wish-text" style={{ opacity: 0 }}>
-                            Being with you is the best journey I've ever been on. Every single day 
+                            Being with you is the best thing I've ever been on. Every single day 
                             we spend together makes me so grateful for what we have.
                         </p>
                         <p className="wish-text" style={{ opacity: 0 }}>
-                            You're my best friend and the one person I can always count on. You 
+                            You're my best friend and the one and only person I can always count on. You 
                             make my entire world so much brighter just by being in it.
                         </p>
                         <p className="wish-text" style={{ opacity: 0 }}>
@@ -248,7 +248,7 @@ const App = () => {
                             everything that's still to come. I love you more than words can say.
                         </p>
                         <div className="wish-signature">
-                            <p className="signature-text">Forever Yours,</p>
+                            <p className="signature-text">Forever Yours bubu</p>
                         </div>
                     </div>
                 </div>
@@ -305,7 +305,7 @@ const App = () => {
                                     <Play size={24} fill="currentColor" />
                                 </div>
                                 <p className="video-label">{i === 1 ? 'Our First Memory' : i === 2 ? 'Together Always' : 'Our Happy Moments'}</p>
-                                <p className="video-sublabel">Click to add your video</p>
+                                <p className="video-sublabel"></p>
                             </div>
                         </div>
                     ))}
@@ -325,8 +325,8 @@ const App = () => {
             <footer className="footer">
                 <div className="footer-content">
                     <p className="footer-title">Made with all my love for you</p>
-                    <p className="footer-quote">"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</p>
-                    <p className="footer-author">— Maya Angelou</p>
+                    <p className="footer-quote">"In all the universe, there is no one for me like you. and there is no one for you like me. we are the like soil and the root of a tree."</p>
+                    <p className="footer-author">— Tharun</p>
                 </div>
             </footer>
         </div>
