@@ -524,7 +524,6 @@ a {
   font-size: 1.1rem;
   color: var(--color-accent-gold);
   letter-spacing: 3px;
-  opacity: 0;
 }
 
 .hero-scroll-indicator {
@@ -733,7 +732,7 @@ a {
   color: var(--color-text);
   text-align: center;
   margin-bottom: 25px;
-  opacity: 0;
+  /* GSAP will handle initial opacity */
 }
 
 .wish-text:last-of-type {

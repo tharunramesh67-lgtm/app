@@ -79,37 +79,62 @@ const App = () => {
 
         // Hero Animations
         const heroTl = gsap.timeline({ delay: 0.5 });
-        heroTl.to(heroSubtitleRef.current, { y: 0, opacity: 1, duration: 1.5, ease: 'power2.out' })
-            .to('.title-line', { y: 0, opacity: 1, duration: 1.8, stagger: 0.2, ease: 'power3.out' }, '-=1')
-            .to(heroDividerRef.current, { scaleX: 1, opacity: 1, duration: 1.5, ease: 'power2.inOut' }, '-=1')
-            .to(heroDateRef.current, { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' }, '-=0.8')
-            .to(scrollIndicatorRef.current, { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' }, '-=0.5');
+        heroTl.fromTo(heroSubtitleRef.current, 
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1.5, ease: 'power2.out' }
+        )
+        .fromTo('.title-line', 
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1.8, stagger: 0.2, ease: 'power3.out' }, 
+            '-=1'
+        )
+        .fromTo(heroDividerRef.current, 
+            { scaleX: 0, opacity: 0 },
+            { scaleX: 1, opacity: 1, duration: 1.5, ease: 'power2.inOut' }, 
+            '-=1'
+        )
+        .fromTo(heroDateRef.current, 
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' }, 
+            '-=0.8'
+        )
+        .fromTo(scrollIndicatorRef.current, 
+            { y: 20, opacity: 0 },
+            { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' }, 
+            '-=0.5'
+        );
 
         // Scroll Animations - Wish Section
-        gsap.to('.wish-card', {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: '.wish-card',
-                start: 'top 85%',
-                toggleActions: 'play none none none'
+        gsap.fromTo('.wish-card', 
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.wish-card',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                }
             }
-        });
+        );
 
-        gsap.to('.wish-text', {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.3,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: '.wish-text',
-                start: 'top 85%',
-                toggleActions: 'play none none none'
+        gsap.fromTo('.wish-text', 
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.3,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.wish-container',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                }
             }
-        });
+        );
 
         // Scroll Animations - Gallery
         gsap.to('.gallery-item', {
