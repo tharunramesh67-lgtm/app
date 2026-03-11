@@ -19,19 +19,19 @@ const App = () => {
     const heroDividerRef = useRef(null);
 
     const galleryImages = [
-        { src: '/couple-1.png', caption: 'Together Forever' },
-        { src: '/couple-2.png', caption: 'Heart of Roses' },
-        { src: '/couple-3.png', caption: 'A Rose for You' },
-        { src: '/couple-1.png', caption: 'Our Journey' },
-        { src: '/couple-2.png', caption: 'Love Blooms' },
-        { src: '/couple-3.png', caption: 'Eternal Love' }
+        { src: '/couple-1.png', caption: 'You and me, always' },
+        { src: '/couple-2.png', caption: 'Beautiful memories' },
+        { src: '/couple-3.png', caption: 'Just for you' },
+        { src: '/couple-1.png', caption: 'Our path together' },
+        { src: '/couple-2.png', caption: 'Growing together' },
+        { src: '/couple-3.png', caption: 'My forever love' }
     ];
 
     const timelineData = [
-        { title: "The Day We Met", date: "When it all began...", text: "The universe conspired to bring us together, and from that first glance, everything changed forever.", side: "left" },
-        { title: "First Adventure Together", date: "Where the magic began...", text: "Our first outing together was filled with laughter, nervous butterflies, and the beginning of something wonderful.", side: "right" },
-        { title: "Falling Deeper in Love", date: "Every day together...", text: "With every conversation, every shared meal, every quiet moment together, our love grew stronger and deeper.", side: "left" },
-        { title: "Today & Forever", date: "Happy Anniversary! 🎉", text: "Here we are, celebrating our love. Every day with you is a gift I'll always treasure. Here's to forever! 💕", side: "right" }
+        { title: "Where It All Began", date: "The day my life changed", text: "I knew from the very first moment we met that you were someone special. My life has been better every single day since then.", side: "left" },
+        { title: "Our First Adventure", date: "Our first little trip together", text: "I couldn't stop smiling that whole day. I knew right then that I wanted to share many more adventures just like that with you.", side: "right" },
+        { title: "Growing Closer", date: "Finding my home in you", text: "As time went by, my love for you just kept growing. You've become my home, my heart, and my absolute favorite part of every day.", side: "left" },
+        { title: "Happy Anniversary", date: "To us, forever", text: "I'm so proud of the life we've built together. Happy Anniversary, my love—I can't wait to see what our future holds.", side: "right" }
     ];
 
     useEffect(() => {
@@ -212,15 +212,15 @@ const App = () => {
                     <div className="hero-frame">
                         <img src="/floral-frame.png" alt="Floral Frame" className="hero-frame-img" />
                     </div>
-                    <p className="hero-subtitle" ref={heroSubtitleRef}>Celebrating Our Love</p>
+                    <p className="hero-subtitle" ref={heroSubtitleRef}>Every Day Is a Gift With You</p>
                     <h1 className="hero-title" ref={heroTitleRef}>
-                        <span className="title-line">Happy</span>
-                        <span className="title-line accent">Anniversary</span>
+                        <span className="title-line">Our</span>
+                        <span className="title-line accent">Beautiful Story</span>
                     </h1>
                     <div className="hero-divider" ref={heroDividerRef} style={{ opacity: 0 }}></div>
                     <p className="hero-date" ref={heroDateRef}>March 6, 2026</p>
                     <div className="hero-scroll-indicator" ref={scrollIndicatorRef}>
-                        <span className="scroll-text">Scroll to explore</span>
+                        <span className="scroll-text">Looking back at us</span>
                         <div className="scroll-arrow">↓</div>
                     </div>
                 </div>
@@ -229,29 +229,26 @@ const App = () => {
             <section id="wish" className="wish-section">
                 <div className="wish-container">
                     <div className="wish-card" style={{ opacity: 0 }}>
-                        <h2 className="wish-heading">My Dearest</h2>
+                        <h2 className="wish-heading">To My Everything,</h2>
                         <div className="wish-divider">
                             <span className="divider-line"></span>
                             <Heart size={20} fill="currentColor" />
                             <span className="divider-line"></span>
                         </div>
                         <p className="wish-text" style={{ opacity: 0 }}>
-                            Every moment with you is a beautiful petal in the garden of our love.
-                            Today, as we celebrate another year of togetherness, my heart is overflowing
-                            with gratitude and joy.
+                            Being with you is the best journey I've ever been on. Every single day 
+                            we spend together makes me so grateful for what we have.
                         </p>
                         <p className="wish-text" style={{ opacity: 0 }}>
-                            You are my sunshine on rainy days, my anchor in stormy seas, and my
-                            reason to smile every single day. Thank you for being the most amazing
-                            partner anyone could ever wish for.
+                            You're my best friend and the one person I can always count on. You 
+                            make my entire world so much brighter just by being in it.
                         </p>
                         <p className="wish-text" style={{ opacity: 0 }}>
-                            Here's to the memories we've made, the laughter we've shared, and the
-                            countless adventures that still await us. I love you more than words
-                            could ever express.
+                            I treasure every memory we've made together, and I'm so excited for 
+                            everything that's still to come. I love you more than words can say.
                         </p>
                         <div className="wish-signature">
-                            <p className="signature-text">Forever & Always Yours</p>
+                            <p className="signature-text">Forever Yours,</p>
                         </div>
                     </div>
                 </div>
@@ -259,9 +256,9 @@ const App = () => {
 
             <section id="gallery" className="gallery-section">
                 <div className="section-header">
-                    <h2 className="section-title">Our Beautiful Moments</h2>
+                    <h2 className="section-title">Moments I Treasure</h2>
                 </div>
-                <p className="section-subtitle">A collection of our most treasured memories</p>
+                <p className="section-subtitle">A look at some of our favorite days together</p>
                 <div className="gallery-grid">
                     {galleryImages.map((img, i) => (
                         <div key={i} className="gallery-item" onClick={() => openLightbox(i)} style={{ opacity: 0 }}>
@@ -278,9 +275,9 @@ const App = () => {
 
             <section id="timeline" className="timeline-section">
                 <div className="section-header">
-                    <h2 className="section-title">Our Love Story</h2>
+                    <h2 className="section-title">Our Special Journey</h2>
                 </div>
-                <p className="section-subtitle">Beautiful milestones of our journey together</p>
+                <p className="section-subtitle">The steps that led me to you</p>
                 <div className="timeline">
                     {timelineData.map((item, i) => (
                         <div key={i} className={`timeline-item ${item.side}`} style={{ opacity: 0 }}>
@@ -297,9 +294,9 @@ const App = () => {
 
             <section id="video" className="video-section">
                 <div className="section-header">
-                    <h2 className="section-title">Our Special Moments</h2>
+                    <h2 className="section-title">Moments We'll Never Forget</h2>
                 </div>
-                <p className="section-subtitle">Relive the beautiful moments we've shared</p>
+                <p className="section-subtitle">Looking back at our happiest times</p>
                 <div className="video-grid">
                     {[1, 2, 3].map(i => (
                         <div key={i} className="video-card" style={{ opacity: 0 }}>
@@ -327,7 +324,7 @@ const App = () => {
 
             <footer className="footer">
                 <div className="footer-content">
-                    <p className="footer-title">Made with 💕 for Our Special Day</p>
+                    <p className="footer-title">Made with all my love for you</p>
                     <p className="footer-quote">"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</p>
                     <p className="footer-author">— Maya Angelou</p>
                 </div>
