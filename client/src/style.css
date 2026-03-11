@@ -444,21 +444,21 @@ a {
 
 .title-line {
   display: block;
-  font-size: clamp(3rem, 10vw, 5rem);
+  font-size: clamp(3.5rem, 10vw, 5.5rem);
   color: var(--color-white);
   opacity: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   font-weight: 400;
 }
 
 .title-line.accent {
-  font-size: clamp(4rem, 15vw, 8rem);
+  font-size: clamp(4.5rem, 12vw, 7rem);
   background: linear-gradient(to right, var(--color-primary-light), var(--color-secondary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(0 0 30px rgba(197, 160, 89, 0.2));
-  margin-top: -10px;
+  margin-top: 20px;
 }
 
 .hero-hearts {
