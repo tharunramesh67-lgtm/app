@@ -236,15 +236,15 @@ const App = () => {
                             <span className="divider-line"></span>
                         </div>
                         <p className="wish-text" style={{ opacity: 0 }}>
-                            Being with you is the best thing I've ever been on. Every single day 
+                            Being with you is the best thing I've ever been on. Every single day
                             we spend together makes me so grateful for what we have.
                         </p>
                         <p className="wish-text" style={{ opacity: 0 }}>
-                            You're my best friend and the one and only person I can always count on. You 
+                            You're my best friend and the one and only person I can always count on. You
                             make my entire world so much brighter just by being in it.
                         </p>
                         <p className="wish-text" style={{ opacity: 0 }}>
-                            I treasure every memory we've made together, and I'm so excited for 
+                            I treasure every memory we've made together, and I'm so excited for
                             everything that's still to come. I love you more than words can say.
                         </p>
                         <div className="wish-signature">
